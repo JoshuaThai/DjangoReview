@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<div id="main">
+    <h1>Found a Checker?</h1>
+    <p>Report it here!</p>
+    {# Will contain a form that will ask user for information#}
+    {# Users will be asked day of week, date, time, and location#}
+    <div id="form-container">
+        <div id="form">
+            <form action="" method="post">
+                {% csrf_token %}
+            <label for="week">Enter Day of Week:</label>
+            <select id="week" name="week">
+                <option>Monday</option>
+                <option>Tuesday</option>
+                <option>Wednesday</option>
+                <option>Thursday</option>
+                <option>Friday</option>
+                <option>Saturday</option>
+                <option>Sunday</option>
+            </select>
+                <br>
+                <label for="date-time">Enter Date & Time:</label>
+                <input type="datetime-local" id="date-time" name="date-time"><br>
+                <label for="location">Enter Location:</label>
+                <input type="text" id="location" name="location"><br>
+                <button type="submit">Submit</button><br>
+        </form>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<div id="ticket-table">
+<h1>TICKETS:</h1>
+    <table>
+    <tr>
+        <th>Week</th>
+        <th>Date & Time</th>
+        <th>Location</th>
+    </tr>
+    {% for ticket in tickets %}
+        <tr>
+            <td>{{ ticket.week }}</td>
+            <td>{{ ticket.date_time }}</td>
+            <td>{{ ticket.location }}</td>
+        </tr>
+    {% endfor %}
+</table>
+</div>
+</body>
+</html>
